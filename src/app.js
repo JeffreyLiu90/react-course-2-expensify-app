@@ -15,6 +15,16 @@ import "normalize.css/normalize.css";
 //create store with the reducers- the file
 const store = configureStore();
 
+const jsx = (
+  <Provider store={store}>
+    <AppRouter />
+  </Provider>
+);
+
+ReactDOM.render(jsx, document.getElementById("app"));
+
+//extra stuff
+
 // store.dispatch(
 //   addExpense({
 //     description: "Water Bill",
@@ -54,10 +64,3 @@ const store = configureStore();
 // console.log("state: ", state);
 
 //create components that grab info from store
-const jsx = (
-  <Provider store={store}>
-    <AppRouter />
-  </Provider>
-);
-
-ReactDOM.render(jsx, document.getElementById("app"));
