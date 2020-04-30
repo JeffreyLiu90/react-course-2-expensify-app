@@ -15,29 +15,29 @@ import "normalize.css/normalize.css";
 //create store with the reducers- the file
 const store = configureStore();
 
-store.dispatch(
-  addExpense({
-    description: "Water Bill",
-    amount: 40,
-    createdAt: 1000
-  })
-);
+// store.dispatch(
+//   addExpense({
+//     description: "Water Bill",
+//     amount: 40,
+//     createdAt: 1000
+//   })
+// );
 
-store.dispatch(
-  addExpense({
-    description: "Rent",
-    amount: 90,
-    createdAt: 1000
-  })
-);
+// store.dispatch(
+//   addExpense({
+//     description: "Rent",
+//     amount: 90,
+//     createdAt: 1000
+//   })
+// );
 
-store.dispatch(
-  addExpense({
-    description: "Gas Bill",
-    amount: 70,
-    createdAt: -1000
-  })
-);
+// store.dispatch(
+//   addExpense({
+//     description: "Gas Bill",
+//     amount: 70,
+//     createdAt: -1000
+//   })
+// );
 
 // setTimeout(() => {
 //   store.dispatch(setTextFilter("bill"));
@@ -47,11 +47,11 @@ store.dispatch(
 // expenses: (2) [{…}, {…}]
 // filters: {text: "bill", sortBy: "date", startDate: undefined, endDate: undefined}
 // __proto__: Object
-const state = store.getState();
-const visibleExpenses = getVisibileExpenses(state.expenses, state.filters);
-console.log(visibleExpenses);
+// const state = store.getState();
+// const visibleExpenses = getVisibileExpenses(state.expenses, state.filters);
+// console.log("visible: ", visibleExpenses);
 
-console.log(state);
+// console.log("state: ", state);
 
 //create components that grab info from store
 const jsx = (
