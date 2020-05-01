@@ -1,7 +1,3 @@
-//loader
-//install local dependencies
-//told webpack to run babel whenever we see JS file - loads the files, converts to JSX to js - this is in the bundle
-
 const path = require("path");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
@@ -12,7 +8,7 @@ module.exports = env => {
   return {
     entry: "./src/app.js",
     output: {
-      path: path.join(__dirname, "public"),
+      path: path.join(__dirname, "public", "dist"),
       filename: "bundle.js"
     },
     module: {
@@ -48,6 +44,7 @@ module.exports = env => {
     devServer: {
       contentBase: path.join(__dirname, "public"),
       historyApiFallback: true,
+      publicPath: "/dist/",
       host: "0.0.0.0",
       port: 3000
     }

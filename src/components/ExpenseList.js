@@ -1,24 +1,23 @@
 import React from "react";
-import ExpenseListIem from "./ExpenseListItem";
-import getVisibleExpenses from "../selectors/expenses";
-
-//connects your component to redux store
 import { connect } from "react-redux";
+import ExpenseListItem from "./ExpenseListItem";
+import selectExpenses from "../selectors/expenses";
 
-const ExpenseList = props => (
+export const ExpenseList = props => (
   <div>
-    <h1>Expense List </h1>
-    {props.expenses.map(expense => {
-      return <ExpenseListIem key={expense.id} {...expense} />;
-    })}
+    {props.expenses.length === 0 ? (
+      <p>No expenses</p>
+    ) : (
+      props.expenses.map(expense => {
+        return <ExpenseListItem key={expense.id} {...expense} />;
+      })
+    )}
   </div>
 );
-//maps store state to component props
+
 const mapStateToProps = state => {
   return {
-    //access to info from store
-    expenses: getVisibleExpenses(state.expenses, state.filters)
-    // filters: state.filters
+    expenses: selectExpenses(state.expenses, state.filters)
   };
 };
 

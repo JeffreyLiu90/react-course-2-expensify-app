@@ -1,10 +1,8 @@
-import { createStore, combineReducers } from "redux";
-import expensesReducer from "../reducers/expenses";
-import filtersReducer from "../reducers/filters";
+import { createStore, combineReducers } from 'redux';
+import expensesReducer from '../reducers/expenses';
+import filtersReducer from '../reducers/filters';
 
 export default () => {
-  //Store Creation
-  //easier to maintain state for different reducers
   const store = createStore(
     combineReducers({
       expenses: expensesReducer,
